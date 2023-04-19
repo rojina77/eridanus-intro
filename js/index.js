@@ -13,13 +13,19 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
+<<<<<<< HEAD
 let messageSection = document.getElementById("messages");
+=======
+
+const messageForm = document.getElementByName("leave_message")[0];
+>>>>>>> e61a9e1e1f084805b82bed3dd8d4287fad1511cc
 messageSection.style.display = "none";
 messageSection.addEventListener('submit', event => {
   event.preventDefault();
   const usersName = event.target.usersName.value;
   const usersEmail = event.target.usersEmail.value;
   const message = event.target.message.value;
+<<<<<<< HEAD
 
 const messageForm = document.forms.leave_message;
 const messageList = messageSection.querySelector('ul');
@@ -75,3 +81,18 @@ githubRequest.onerror = function (){
 
 
 
+=======
+const messageList = messageSection.querySelector('ul');
+const newMessage = document.createElement('li');
+newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName}</a> <span>${message}</span>`;
+const removeButton = document.createElement('button');
+removeButton.innerText = 'remove';
+removeButton.type = 'button';
+removeButton.addEventListener('click', () => {
+  const entry = removeButton.parentNode;
+  entry.remove();
+  });
+newMessage.appendChild(removeButton);
+messageForm.reset();
+});
+>>>>>>> e61a9e1e1f084805b82bed3dd8d4287fad1511cc
