@@ -2,8 +2,8 @@
 
 
 p{
-    color: brown;
-    background-color: burlywood;
+    color: blueviolet;
+    background-color: oldlace;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 h1 {
@@ -41,6 +41,21 @@ li{
     border: 2px solid rebeccapurple;
     padding: .5em; ;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+ol{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+ol{
+  border:solid;
+  border-width: 2px;
+  border-color: rgb(42, 111, 39);
+  border-radius: 3px;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  padding:1em;
 }
 #skills  {
   max-width: 75%;
@@ -98,6 +113,10 @@ nav ul {
   padding: 0;
   display: flex;
 }
+ul.a {
+  list-style-type: circle;
+}
+
 #connect ul
 {
   background-color: burlywood;
