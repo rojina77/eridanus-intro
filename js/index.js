@@ -76,17 +76,17 @@ githubRequest.open('GET', 'https://api.github.com/users/rojina77/repos');
 githubRequest.onerror = function (){
   console.log("Connection error");
 };
-
-const messageList = messageSection.querySelector('ul');
-const newMessage = document.createElement('li');
-newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName}</a> <span>${message}</span>`;
-const removeButton = document.createElement('button');
-removeButton.innerText = 'remove';
-removeButton.type = 'button';
-removeButton.addEventListener('click', () => {
-  const entry = removeButton.parentNode;
-  entry.remove();
-  });
-newMessage.appendChild(removeButton);
-messageForm.reset();
-});
+fetch('https://api.github.com/users/rojina77/repos')
+  .then(response => response.json())
+  .then(data => {
+    const repoList = document.getElementById('repos');
+    data.forEach(repo => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = repo.html_url;
+      link.textContent = repo.name;
+      listItem.appendChild(link);
+      repoList.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error(error));
