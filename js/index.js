@@ -72,5 +72,17 @@ githubRequest.open('GET', 'https://api.github.com/users/rojina77/repos');
 githubRequest.onerror = function (){
   console.log("Connection error");
 };
-
-fetch 
+fetch('https://api.github.com/users/rojina77/repos')
+  .then(response => response.json())
+  .then(data => {
+    const repoList = document.getElementById('repos');
+    data.forEach(repo => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = repo.html_url;
+      link.textContent = repo.name;
+      listItem.appendChild(link);
+      repoList.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error(error));
