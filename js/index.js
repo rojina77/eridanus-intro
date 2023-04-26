@@ -13,13 +13,15 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
-const messageForm=document.getElementById("leave_message");
-messageForm.addEventListener('submit', (event) => {
+let messageSection = document.getElementById("messages");
+messageSection.style.display = "none";
+messageSection.addEventListener('submit', event => {
   event.preventDefault();
   const usersName = event.target.usersName.value;
   const usersEmail = event.target.usersEmail.value;
   const message = event.target.message.value;
-const messageSection = document.getElementById("messages");
+
+const messageForm = document.forms.leave_message;
 const messageList = messageSection.querySelector('ul');
   // create a new list item (li) element and store it in a variable named newMessage
   const newMessage = document.createElement('li');
