@@ -42,6 +42,7 @@ li{
     padding: .5em; ;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+lesson-6-1
 ol{
   display: flex;
   flex-direction: column;
@@ -56,7 +57,7 @@ ol{
   margin-right: 1%;
   margin-bottom: 1%;
   padding:1em;
-}
+} main
 #skills  {
   max-width: 75%;
 }
@@ -113,10 +114,11 @@ nav ul {
   padding: 0;
   display: flex;
 }
+lesson-6-1
 ul.a {
   list-style-type: circle;
 }
-
+main
 #connect ul
 {
   background-color: burlywood;
