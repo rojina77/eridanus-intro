@@ -13,33 +13,33 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
-let messageSection = document.getElementById("messages");
-messageSection.style.display = "none";
-messageSection.addEventListener('submit', event => {
-  event.preventDefault();
-  const usersName = event.target.usersName.value;
-  const usersEmail = event.target.usersEmail.value;
-  const message = event.target.message.value;
-
-const messageForm = document.forms.leave_message;
-const messageList = messageSection.querySelector('ul');
-  // create a new list item (li) element and store it in a variable named newMessage
-  const newMessage = document.createElement('li');
-  newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName}</a> <span>${message}</span>`;
-  console.log(newMessage);
-  messageForm.reset();
-  const removeButton = document.createElement('button');
-  removeButton.innerText = 'remove';
-  console.log(removeButton);
-  removeButton.type = "button";
-  removeButton.addEventListener('click', (remove) => {
-    const entry = removeButton.parentNode;
-    entry.remove();
-  });
-  newMessage.appendChild(removeButton);
-  messageList.appendChild(newMessage);
-});
-
+const messageForm=document.getElementById("leave_message");
+messageForm.addEventListener('submit',  (event)=> {
+    event.preventDefault();
+    const nameValue=event.target.name.value;
+    const emailValue=event.target.email.value;
+    const messageValue=event.target.message.value;
+    console.log(nameValue);
+    console.log(emailValue);
+    console.log(messageValue);
+    const messageSection=document.getElementById("messages");
+    const messageList= messageSection.querySelector('ul');
+    const newMessage=document.createElement('li');
+    newMessage.innerHTML=`<a href="mailto:${emailValue}">${nameValue}</a> <span> ${messageValue} </span>`;
+    //newMessage.innerHTML=('<a href="mailto:emailValue">${nameValue}</a>');
+    console.log(newMessage)
+    messageForm.reset()
+    const removeButton=document.createElement('button');
+    removeButton.innerText='remove';
+    console.log(removeButton);
+    removeButton.type="button";
+    removeButton.addEventListener('click',  (remove)=>{
+        const entry=removeButton.parentNode;
+        entry.remove();  
+    })
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+})
   //var githubRequest = new XMLHttpRequest();
 //githubRequest.open('GET', 'https://api.github.com/users/rojina77/repos');
   //githubRequest.send(); 
