@@ -28,6 +28,7 @@ messageForm.addEventListener('submit',  (event)=> {
     newMessage.innerHTML=`<a href="mailto:${emailValue}">${nameValue}</a> <span> ${messageValue} </span>`;
     //newMessage.innerHTML=('<a href="mailto:emailValue">${nameValue}</a>');
     console.log(newMessage)
+    messageForm.reset()
     const removeButton=document.createElement('button');
     removeButton.innerText='remove';
     console.log(removeButton);
@@ -37,7 +38,6 @@ messageForm.addEventListener('submit',  (event)=> {
          messageList.removeChild(newMessage);
         entry.remove();  
     })
-     messageForm.reset()
     newMessage.appendChild(removeButton);
 })
   //var githubRequest = new XMLHttpRequest();
