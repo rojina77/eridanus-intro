@@ -16,14 +16,14 @@ for (let i = 0; i < skills.length; i++) {
 const messageForm=document.getElementById("leave_message");
 messageForm.addEventListener('submit',  (event)=> {
     event.preventDefault();
-    const nameValue=event.target.name.value;
-    const emailValue=event.target.email.value;
-    const messageValue=event.target.message.value;
+    const usersName=event.target.usersName.value;
+    const usersEmail=event.target.usersEmail.value;
+    const message=event.target.message.value;
    
     const messageSection=document.getElementById("messages");
     const messageList= messageSection.querySelector('ul');
     const newMessage=document.createElement('li');
-    newMessage.innerHTML=`<a href="mailto:${emailValue}">${nameValue}</a> <span> ${messageValue} </span>`;
+    newMessage.innerHTML=`<a href="mailto:${usersEmail}">${usersName}</a> <span> ${message) </span>`;
     //newMessage.innerHTML=('<a href="mailto:emailValue">${nameValue}</a>');
     console.log(newMessage);
     messageForm.reset();
