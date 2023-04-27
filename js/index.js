@@ -37,8 +37,9 @@ messageForm.addEventListener('submit',  (event)=> {
         entry.remove();  
     })
     newMessage.appendChild(removeButton);
+     messageForm.reset();
 })
- messageForm.reset()
+
   //var githubRequest = new XMLHttpRequest();
 //githubRequest.open('GET', 'https://api.github.com/users/rojina77/repos');
   //githubRequest.send(); 
