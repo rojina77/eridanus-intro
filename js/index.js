@@ -19,27 +19,25 @@ messageForm.addEventListener('submit',  (event)=> {
     const nameValue=event.target.name.value;
     const emailValue=event.target.email.value;
     const messageValue=event.target.message.value;
-  
+   
     const messageSection=document.getElementById("messages");
     const messageList= messageSection.querySelector('ul');
     const newMessage=document.createElement('li');
     newMessage.innerHTML=`<a href="mailto:${emailValue}">${nameValue}</a> <span> ${messageValue} </span>`;
     //newMessage.innerHTML=('<a href="mailto:emailValue">${nameValue}</a>');
-    console.log(newMessage)
-   
+    console.log(newMessage);
+    messageForm.reset();
     const removeButton=document.createElement('button');
     removeButton.innerText='remove';
     console.log(removeButton);
     removeButton.type="button";
-    removeButton.addEventListener('click',  (remove)=>{
+    removeButton.addEventListener('click', (remove)=>{
         const entry=removeButton.parentNode;
-         messageList.removeChild(newMessage);
         entry.remove();  
-    })
+    });
     newMessage.appendChild(removeButton);
-     messageForm.reset();
-})
-
+    messageList.appendChild(newMessage);
+});
   //var githubRequest = new XMLHttpRequest();
 //githubRequest.open('GET', 'https://api.github.com/users/rojina77/repos');
   //githubRequest.send(); 
