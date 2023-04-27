@@ -13,27 +13,29 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
-const messageForm=document.getElementById("leave_message");
-messageForm.addEventListener('submit',  (event)=> {
+const messageForm = document.getElementById("leave_message");
+messageForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const usersName=event.target.usersName.value;
-    const usersEmail=event.target.usersEmail.value;
-    const message=event.target.message.value;
-   
-    const messageSection=document.getElementById("messages");
-    const messageList= messageSection.querySelector('ul');
-    const newMessage=document.createElement('li');
-    newMessage.innerHTML=`<a href="mailto:${usersEmail}">${usersName}</a> <span> ${message) </span>`;
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const message = event.target.usersMessage.value;
+
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector('ul');
+    const newMessage = document.createElement('li');
+    newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName}</a> <span> ${message} </span>`;
     //newMessage.innerHTML=('<a href="mailto:emailValue">${nameValue}</a>');
     console.log(newMessage);
+    messageList.appendChild(newMessage);
+
     messageForm.reset();
-    const removeButton=document.createElement('button');
-    removeButton.innerText='remove';
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'remove';
     console.log(removeButton);
-    removeButton.type="button";
-    removeButton.addEventListener('click', (remove)=>{
-        const entry=removeButton.parentNode;
-        entry.remove();  
+    removeButton.type = "button";
+    removeButton.addEventListener('click', (remove) => {
+        const entry = removeButton.parentNode;
+        entry.remove();
     });
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
