@@ -28,17 +28,17 @@ messageForm.addEventListener('submit',  (event)=> {
     newMessage.innerHTML=`<a href="mailto:${emailValue}">${nameValue}</a> <span> ${messageValue} </span>`;
     //newMessage.innerHTML=('<a href="mailto:emailValue">${nameValue}</a>');
     console.log(newMessage)
-    messageForm.reset()
     const removeButton=document.createElement('button');
     removeButton.innerText='remove';
     console.log(removeButton);
     removeButton.type="button";
     removeButton.addEventListener('click',  (remove)=>{
         const entry=removeButton.parentNode;
+         messageList.removeChild(newMessage);
         entry.remove();  
     })
+     messageForm.reset()
     newMessage.appendChild(removeButton);
-    messageList.appendChild(newMessage);
 })
   //var githubRequest = new XMLHttpRequest();
 //githubRequest.open('GET', 'https://api.github.com/users/rojina77/repos');
